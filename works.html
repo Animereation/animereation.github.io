@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动创作作品展示 | Animereation Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans SC', sans-serif; }
+    body { background: linear-gradient(to bottom, #14062b, #0a0318); color: #fff; overflow-x: hidden; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; position: sticky; top: 0; background: rgba(10, 5, 30, 0.85); backdrop-filter: blur(8px); z-index: 999; }
+    header h1 { font-size: 1.5rem; }
+    nav a { color: #ccc; text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+    nav a:hover { color: #ff79c8; }
+
+    section { padding: 80px 10% 60px; text-align: center; }
+    section h2 { font-size: 2.2rem; margin-bottom: 40px; background: linear-gradient(90deg, #ff8bdc, #b987ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .video-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .video-card:hover { transform: translateY(-6px); }
+
+    video {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    h4 {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 22px;
+      background: #ff4ea1;
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover { background: #ff72b5; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>动创作 Animereation</h1>
+    <nav>
+      <a href="index.html">主页</a>
+      <a href="works.html">作品展示</a>
+    </nav>
+  </header>
+
+  <section>
+    <a href="index.html" class="back-btn">← 返回主页</a>
+    <h2>作品展示</h2>
+    <p style="max-width:600px;margin:0 auto 40px;color:#ccc;">以下是动创作团队的部分动画翻译与二创作品。所有视频均为兴趣创作，为爱发电 ❤️</p>
+
+    <div class="video-grid">
+      <!-- 🔽 在这里替换成你自己的视频文件路径 🔽 -->
+      <div class="video-card">
+        <video src="videos/work1.mp4" controls preload="metadata"></video>
+        <h4>作品标题 1</h4>
+      </div>
+      <div class="video-card">
+        <video src="videos/work2.mp4" controls preload="metadata"></video>
+        <h4>作品标题 2</h4>
+      </div>
+      <div class="video-card">
+        <video src="videos/work3.mp4" controls preload="metadata"></video>
+        <h4>作品标题 3</h4>
+      </div>
+      <div class="video-card">
+        <video src="videos/work4.mp4" controls preload="metadata"></video>
+        <h4>作品标题 4</h4>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 动创作 Animereation | 动画翻译与二创团队 · 为爱发电
+  </footer>
+</body>
+</html>
