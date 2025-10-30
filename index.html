@@ -1,0 +1,74 @@
+import { motion } from 'framer-motion' import { Button } from '@/components/ui/button' import { Card, CardContent } from '@/components/ui/card' import { Heart, PlayCircle, Users } from 'lucide-react'
+
+export default function HomePage() { return ( <div className="min-h-screen bg-gradient-to-b from-purple-950 via-indigo-900 to-gray-900 text-white"> {/* Header */} <header className="flex justify-between items-center px-8 py-6"> <h1 className="text-2xl font-bold tracking-wide">动创作 Animereation</h1> <nav className="space-x-6"> <a href="#about" className="hover:text-pink-400 transition">关于我们</a> <a href="#works" className="hover:text-pink-400 transition">作品</a> <a href="#join" className="hover:text-pink-400 transition">加入我们</a> </nav> </header>
+
+{/* Hero Section */}
+  <section className="flex flex-col items-center justify-center text-center mt-20 px-6">
+    <motion.h2 
+      initial={{ opacity: 0, y: -20 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.8 }}
+      className="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent"
+    >
+      为爱发电的动画创作团队
+    </motion.h2>
+    <p className="max-w-2xl text-gray-300 text-lg mb-8">
+      动创作（Animereation）专注于动画翻译、二次创作与原创动画制作，
+      用热爱与创意点亮每一帧画面。
+    </p>
+    <Button className="bg-pink-500 hover:bg-pink-600 text-white text-lg px-6 py-3 rounded-full shadow-lg">
+      了解更多
+    </Button>
+  </section>
+
+  {/* About Section */}
+  <section id="about" className="px-6 md:px-16 py-20">
+    <h3 className="text-3xl font-bold mb-8 text-center">我们的方向</h3>
+    <div className="grid md:grid-cols-3 gap-8">
+      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
+        <CardContent className="p-6 text-center">
+          <PlayCircle className="w-12 h-12 mx-auto mb-4 text-pink-400" />
+          <h4 className="text-xl font-semibold mb-2">动画翻译与本地化</h4>
+          <p className="text-gray-300">让更多观众感受全球优秀动画的魅力，传递原汁原味的情感与文化。</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
+        <CardContent className="p-6 text-center">
+          <Heart className="w-12 h-12 mx-auto mb-4 text-pink-400" />
+          <h4 className="text-xl font-semibold mb-2">动漫二创与剪辑</h4>
+          <p className="text-gray-300">以全新视角重塑经典，用音乐与镜头讲述属于粉丝的热爱。</p>
+        </CardContent>
+      </Card>
+
+      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
+        <CardContent className="p-6 text-center">
+          <Users className="w-12 h-12 mx-auto mb-4 text-pink-400" />
+          <h4 className="text-xl font-semibold mb-2">原创动画项目</h4>
+          <p className="text-gray-300">探索原创的可能，用团队的力量实现属于我们的动画梦。</p>
+        </CardContent>
+      </Card>
+    </div>
+  </section>
+
+  {/* Join Section */}
+  <section id="join" className="text-center py-20 bg-gradient-to-b from-indigo-900 to-purple-950">
+    <h3 className="text-3xl font-bold mb-6">加入我们</h3>
+    <p className="max-w-2xl mx-auto text-gray-300 mb-8">
+      如果你热爱动画，擅长翻译、剪辑、绘画或配音，欢迎加入动创作！
+      让我们一起，用动画点亮世界。
+    </p>
+    <Button className="bg-pink-500 hover:bg-pink-600 text-white text-lg px-6 py-3 rounded-full shadow-lg">
+      加入团队
+    </Button>
+  </section>
+
+  {/* Footer */}
+  <footer className="text-center py-6 text-gray-400 border-t border-white/10">
+    © 2025 动创作 Animereation | 为爱发电
+  </footer>
+</div>
+
+) }
+
+    
