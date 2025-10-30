@@ -1,74 +1,99 @@
-import { motion } from 'framer-motion' import { Button } from '@/components/ui/button' import { Card, CardContent } from '@/components/ui/card' import { Heart, PlayCircle, Users } from 'lucide-react'
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动创作 Animereation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans SC', sans-serif; }
+    body { background: linear-gradient(to bottom, #1a0836, #0b0420); color: #fff; overflow-x: hidden; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; position: sticky; top: 0; background: rgba(10, 5, 30, 0.8); backdrop-filter: blur(8px); z-index: 999; }
+    header h1 { font-size: 1.6rem; font-weight: bold; }
+    nav a { color: #ccc; text-decoration: none; margin: 0 12px; transition: color 0.3s; }
+    nav a:hover { color: #ff77c8; }
 
-export default function HomePage() { return ( <div className="min-h-screen bg-gradient-to-b from-purple-950 via-indigo-900 to-gray-900 text-white"> {/* Header */} <header className="flex justify-between items-center px-8 py-6"> <h1 className="text-2xl font-bold tracking-wide">动创作 Animereation</h1> <nav className="space-x-6"> <a href="#about" className="hover:text-pink-400 transition">关于我们</a> <a href="#works" className="hover:text-pink-400 transition">作品</a> <a href="#join" className="hover:text-pink-400 transition">加入我们</a> </nav> </header>
+    .hero { text-align: center; padding: 100px 20px 80px; }
+    .hero h2 { font-size: 2.8rem; background: linear-gradient(90deg, #ff89e9, #d29fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    .hero p { max-width: 650px; margin: 0 auto 30px; color: #ccc; font-size: 1.1rem; line-height: 1.8; }
+    .btn { background: #ff4ea1; color: #fff; border: none; padding: 12px 28px; border-radius: 999px; font-size: 1rem; cursor: pointer; transition: background 0.3s; text-decoration: none; display: inline-block; }
+    .btn:hover { background: #ff71b5; }
 
-{/* Hero Section */}
-  <section className="flex flex-col items-center justify-center text-center mt-20 px-6">
-    <motion.h2 
-      initial={{ opacity: 0, y: -20 }} 
-      animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.8 }}
-      className="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent"
-    >
-      为爱发电的动画创作团队
-    </motion.h2>
-    <p className="max-w-2xl text-gray-300 text-lg mb-8">
-      动创作（Animereation）专注于动画翻译、二次创作等方向，
-      用热爱与创意点亮每一帧画面。
-    </p>
-    <Button className="bg-pink-500 hover:bg-pink-600 text-white text-lg px-6 py-3 rounded-full shadow-lg">
-      了解更多
-    </Button>
+    section { padding: 80px 10% 60px; text-align: center; }
+    section h3 { font-size: 2rem; margin-bottom: 40px; }
+    .cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card { background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h4 { font-size: 1.2rem; margin: 10px 0; }
+    .card p { color: #bbb; line-height: 1.6; }
+
+    .join { background: linear-gradient(to bottom, #221155, #160a33); padding: 100px 10%; }
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #aaa; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>动创作 Animereation</h1>
+    <nav>
+      <a href="#about">关于我们</a>
+      <a href="#works">作品</a>
+      <a href="#join">加入我们</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>为爱发电的动画二创团队</h2>
+    <p>动创作（Animereation）是一个非营利动画创作组织，专注于动画翻译与二次创作。我们用热爱与创意重塑经典，传播动画文化。</p>
+    <a href="#about" class="btn">了解更多</a>
   </section>
 
-  {/* About Section */}
-  <section id="about" className="px-6 md:px-16 py-20">
-    <h3 className="text-3xl font-bold mb-8 text-center">我们的方向</h3>
-    <div className="grid md:grid-cols-3 gap-8">
-      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
-        <CardContent className="p-6 text-center">
-          <PlayCircle className="w-12 h-12 mx-auto mb-4 text-pink-400" />
-          <h4 className="text-xl font-semibold mb-2">动画翻译与本地化</h4>
-          <p className="text-gray-300">让更多观众感受全球优秀动画的魅力，传递原汁原味的情感与文化。</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
-        <CardContent className="p-6 text-center">
-          <Heart className="w-12 h-12 mx-auto mb-4 text-pink-400" />
-          <h4 className="text-xl font-semibold mb-2">动漫二创与剪辑</h4>
-          <p className="text-gray-300">以全新视角重塑经典，用音乐与镜头讲述属于粉丝的热爱。</p>
-        </CardContent>
-      </Card>
-
-      <Card className="bg-white/10 backdrop-blur-lg border-none shadow-xl">
-        <CardContent className="p-6 text-center">
-          <Users className="w-12 h-12 mx-auto mb-4 text-pink-400" />
-          <h4 className="text-xl font-semibold mb-2">原创动画项目（目前没有这计划）</h4>
-          <p className="text-gray-300">探索原创的可能，用团队的力量实现属于我们的动画梦。（没有哦）</p>
-        </CardContent>
-      </Card>
+  <section id="about">
+    <h3>我们的方向</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>🌍 动画翻译与本地化</h4>
+        <p>我们致力于将优秀的动画作品带给更多观众，在尊重原作的基础上进行高质量翻译与润色。</p>
+      </div>
+      <div class="card">
+        <h4>🎬 动漫二创与剪辑</h4>
+        <p>通过混剪、重配、同人改编等形式重新演绎经典，为动画注入新的生命与表达。</p>
+      </div>
+      <div class="card">
+        <h4>💫 为爱发电</h4>
+        <p>我们不是商业团队，只是一群热爱动画的创作者。所有作品均出于兴趣与热情。</p>
+      </div>
     </div>
   </section>
 
-  {/* Join Section */}
-  <section id="join" className="text-center py-20 bg-gradient-to-b from-indigo-900 to-purple-950">
-    <h3 className="text-3xl font-bold mb-6">加入我们</h3>
-    <p className="max-w-2xl mx-auto text-gray-300 mb-8">
-      如果你热爱动画，擅长翻译、剪辑、绘画或配音，欢迎加入动创作！
-      让我们一起，用动画点亮世界。
+  <section id="join" class="join">
+    <h3>加入我们</h3>
+    <p style="max-width:700px;margin:auto;color:#ccc;line-height:1.8;">
+      如果你热爱动画、擅长翻译、剪辑或配音，欢迎加入动创作！  
+      让我们一起，用二创点亮世界。
     </p>
-    <Button className="bg-pink-500 hover:bg-pink-600 text-white text-lg px-6 py-3 rounded-full shadow-lg">
-      加入团队
-    </Button>
+    <br>
+    <button class="btn" id="joinBtn">加入我们</button>
   </section>
 
-  {/* Footer */}
-  <footer className="text-center py-6 text-gray-400 border-t border-white/10">
-    © 2025 动创作 Animereation | 为爱发电
+  <footer>
+    © 2025 动创作 Animereation | 动画翻译与二创团队 · 为爱发电
   </footer>
-</div>
 
-) }
+  <script>
+    document.getElementById('joinBtn').addEventListener('click', () => {
+      const tgUrl = 'https://t.me/Animereation';
+      const qqUrl = 'https://qm.qq.com/q/JDyTob9xm4';
 
-    
+      // 打开 Telegram 群
+      window.open(tgUrl, '_blank');
+
+      // 如果 3 秒内用户没跳走（说明 Telegram 没打开），跳转 QQ 群
+      setTimeout(() => {
+        if (!document.hidden) {
+          window.open(qqUrl, '_blank');
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
